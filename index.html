@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QVTS2SPZCT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QVTS2SPZCT');
+</script>
+<title>Dan Marcelo</title>
+<meta name="description" content="Dan Marcelo — economist, professor, author of the Don't Series, campaign strategist, and voice of Economic Intelligence.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danmarcelo.com/">
+<meta property="og:title" content="Dan Marcelo">
+<meta property="og:description" content="Economist, professor, author of the Don't Series, investor, and campaign strategist. Money and markets, made clear.">
+<meta property="og:image" content="https://danmarcelo.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a banker's ledger — ruled sections, a dictionary-entry hero, typographic book covers. */
+:root{
+  --paper:#f5f6f2; --surface:#ffffff; --ink:#15213a; --muted:#56607a; --rule:#d9dccf;
+  --accent:#1d6a4c; --accent-ink:#ffffff; --gold:#b8892b; --cover:#15213a; --cover-ink:#f5f6f2;
+  --display:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --wrap:1120px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f1626; --surface:#162036; --ink:#e9ecf3; --muted:#a3acc2; --rule:#2a3550;
+  --accent:#4fb889; --accent-ink:#0b1424; --gold:#d9ab4f; --cover:#22304d; --cover-ink:#f1f3f8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1626; --surface:#162036; --ink:#e9ecf3; --muted:#a3acc2; --rule:#2a3550;
+  --accent:#4fb889; --accent-ink:#0b1424; --gold:#d9ab4f; --cover:#22304d; --cover-ink:#f1f3f8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;text-wrap:balance;margin:0}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:22px;color:var(--ink);text-decoration:none}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;padding-block:72px 56px}
+.hero h1{font-size:clamp(46px,7vw,84px);margin-top:14px}
+.hero h1 em{color:var(--accent)}
+.lead{font-size:20px;color:var(--muted);max-width:34em;margin:22px 0 30px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:16px;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.entry{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:30px 30px 26px;min-width:0}
+.entry .word{font-family:var(--display);font-size:32px}
+.entry .pron{font-family:var(--mono);font-size:14px;color:var(--muted);margin:4px 0 16px}
+.entry .pron i{color:var(--gold);font-style:italic}
+.entry p{margin:0;font-size:18px}
+.entry .src{margin-top:18px;padding-top:14px;border-top:1px dashed var(--rule);font-size:14px;color:var(--muted)}
+
+/* credentials strip */
+.facts{border-block:1px solid var(--rule);background:var(--surface)}
+.facts ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.facts li{padding:22px 20px;border-left:1px solid var(--rule);min-width:0}
+.facts li:first-child{border-left:0}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:34px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.facts span{font-size:15px;color:var(--muted)}
+
+section.block{padding-block:84px}
+.head{display:grid;gap:12px;max-width:44em;margin-bottom:40px}
+.head h2{font-size:clamp(34px,4.6vw,52px)}
+.head p{margin:0;color:var(--muted);font-size:18px}
+
+/* covers */
+.covers{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:36px 22px;list-style:none;margin:0;padding:0}
+.book{display:flex;flex-direction:column;gap:6px;min-width:0}
+.book h3{font-family:var(--body);font-weight:700;font-size:16px;line-height:1.3;margin-top:10px}
+.book h3 a{color:var(--ink);text-decoration:none}
+.book h3 a:hover{color:var(--accent);text-decoration:underline}
+.book p{margin:0;font-size:14px;line-height:1.45;color:var(--muted)}
+.jacket{position:relative;display:block;aspect-ratio:2/3;max-width:100%;border-radius:2px 6px 6px 2px;box-shadow:0 1px 2px rgba(21,33,58,.18),0 10px 24px -10px rgba(21,33,58,.45);transition:transform .2s ease}
+.jacket img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
+.jacket:hover{transform:translateY(-4px)}
+@media (prefers-reduced-motion:reduce){.jacket{transition:none}.jacket:hover{transform:none}}
+.cover{background:var(--cover);color:var(--cover-ink);border-radius:2px 6px 6px 2px;padding:18px 16px 16px 22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 6px 0 0 rgba(0,0,0,.22);text-decoration:none;transition:transform .2s ease}
+.cover:hover{transform:translateY(-4px)}
+@media (prefers-reduced-motion:reduce){.cover{transition:none}.cover:hover{transform:none}}
+.cover .series{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.cover .t{font-family:var(--display);font-size:22px;line-height:1.08}
+.cover .t span{display:block;font-size:32px;color:var(--gold)}
+.cover .by{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.badge{position:absolute;z-index:1;top:-10px;right:-8px;background:var(--gold);color:#15213a;font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:5px 8px;border-radius:3px;max-width:130px;line-height:1.3}
+.more{margin-top:28px}
+
+.sub{margin-top:72px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.sub>div{min-width:0}
+.sub h3{font-size:30px;margin-bottom:6px}
+.sub .note{color:var(--muted);margin:0 0 18px}
+.ledger{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.ledger li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.ledger strong{font-weight:600}
+.ledger .r{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;flex-shrink:0;max-width:45%}
+.ledger .r.soon{color:var(--accent)}
+
+/* speaking */
+.alt{background:var(--surface);border-block:1px solid var(--rule)}
+.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:2px solid var(--ink)}
+.topic{padding:28px 28px 28px 0;border-bottom:1px solid var(--rule);min-width:0}
+.topic:nth-child(even){padding-left:28px;padding-right:0;border-left:1px solid var(--rule)}
+.topic h3{font-size:26px;margin-bottom:8px}
+.topic p{margin:0;color:var(--muted)}
+.formats{margin-top:28px;color:var(--muted)}
+.formats strong{color:var(--ink)}
+
+.timeline{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.timeline li{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--rule)}
+.timeline li>div{min-width:0}
+.timeline .yr{font-family:var(--display);font-size:40px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.timeline h3{font-size:26px;margin-bottom:4px}
+.timeline p{margin:0;color:var(--muted)}
+@media (max-width:560px){.timeline li{grid-template-columns:1fr;gap:6px}.timeline .yr{font-size:32px}}
+/* about */
+.about .wrap{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.portrait{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;max-width:100%;border-radius:4px;box-shadow:0 10px 28px -12px rgba(21,33,58,.5)}
+.portrait b{font-family:var(--display);font-weight:400;font-size:84px;line-height:1;color:var(--gold)}
+.portrait small{display:block;margin-top:10px;font-size:13px;opacity:.75}
+.about .text{max-width:40em;min-width:0}
+.about .text p{margin:0 0 18px}
+.about .text p:first-of-type{font-size:20px}
+blockquote{margin:28px 0 0;padding:4px 0 4px 22px;border-left:3px solid var(--gold);font-family:var(--display);font-size:24px;line-height:1.3}
+
+/* contact */
+.contact{background:var(--cover);color:var(--cover-ink)}
+.contact .head p{color:var(--cover-ink);opacity:.8}
+.contact h2{color:var(--cover-ink)}
+.contact .label{color:var(--gold)}
+.contact-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start}
+.contact-grid>*{min-width:0}
+.cform{display:grid;gap:18px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cform label{display:grid;gap:6px;font-weight:600;font-size:15px;min-width:0}
+.cform .opt{font-weight:400;opacity:.7}
+.cform input,.cform select,.cform textarea{font:400 16px var(--body);color:#15213a;background:#f5f6f2;border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:12px 14px;width:100%;color-scheme:light}
+.cform textarea{resize:vertical;min-height:130px}
+.cform input:focus-visible,.cform select:focus-visible,.cform textarea:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.hp{position:absolute;left:-9999px}
+.send{justify-self:start;font:700 16px var(--body);background:var(--gold);color:#15213a;border:0;border-radius:6px;padding:14px 26px;cursor:pointer}
+.send:hover{filter:brightness(1.08)}
+.fstatus{margin:0;font-size:14px;color:var(--gold);min-height:1em}
+.follow h3{font-size:26px;color:var(--cover-ink);margin-bottom:16px}
+.social{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.15);color:var(--cover-ink);text-decoration:none;font-weight:600}
+.social:last-child{border-bottom:1px solid rgba(255,255,255,.15)}
+.social:hover span{color:var(--gold)}
+.social small{display:block;font-weight:400;font-size:14px;opacity:.7}
+.ico{width:36px;height:36px;flex-shrink:0;color:var(--gold)}
+footer a{color:inherit}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr;gap:40px}.row2{grid-template-columns:1fr}}
+footer{background:var(--cover);color:var(--cover-ink);border-top:1px solid rgba(255,255,255,.12)}
+footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;opacity:.75}
+
+@media (max-width:860px){
+  .hero .wrap,.sub,.about .wrap{grid-template-columns:1fr}
+  .hero .wrap{padding-block:48px 40px;gap:36px}
+  .facts ul{grid-template-columns:repeat(2,1fr)}
+  .facts li:nth-child(3){border-left:0}
+  .facts li:nth-child(n+3){border-top:1px solid var(--rule)}
+  .topics{grid-template-columns:1fr}
+  .topic,.topic:nth-child(even){padding:24px 0;border-left:0}
+  .portrait{max-width:260px}
+  section.block{padding-block:60px}
+  nav ul{gap:16px}
+}
+@media (max-width:420px){.covers{grid-template-columns:repeat(2,1fr);gap:28px 14px}.cover .t{font-size:18px}.cover .t span{font-size:26px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home">Dan Marcelo</a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="real-estate/">Real Estate</a></li>
+      <li><a href="#campaigns">Campaigns</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="label">Economist · Professor · Author · Investor · Campaign Strategist</div>
+        <h1>Money and markets, <em>made clear.</em></h1>
+        <p class="lead">I write and teach about how economic systems actually work, so you can make smarter decisions with your income, your business, and your future.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#books">Explore the books</a>
+          <a class="btn ghost" href="#speaking">Invite me to speak</a>
+        </div>
+      </div>
+      <aside class="entry" aria-label="Definition of Economic Intelligence">
+        <div class="word">Economic Intelligence</div>
+        <div class="pron">/ ˌek·ə·ˈnäm·ik in·ˈtel·ə·jəns / &nbsp;<i>noun</i></div>
+        <p>The skill of understanding how money and markets really work, and using that understanding to make smarter decisions with your income, your business, and your future.</p>
+        <div class="src">Economic Intelligence by Danilo F. Marcelo Jr., DBA</div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="facts">
+    <ul class="wrap">
+      <li><b>10+ yrs</b><span>in Philippine banking</span></li>
+      <li><b>2005</b><span>real estate practice since</span></li>
+      <li><b>2010</b><span>active in the stock market since</span></li>
+      <li><b>13</b><span>books live on Kindle</span></li>
+    </ul>
+  </div>
+
+  <section class="block" id="books">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Books</div>
+        <h2>The Don't Series</h2>
+        <p>Short, sharp books on the economic mistakes people commonly make with money, work, and investing, and how to avoid them.</p>
+      </div>
+      <ul class="covers">
+        <li class="book"><a class="jacket" href="books/dont-be-trapped-by-credit-cards/"><span class="badge">#1 New Release · Microeconomics</span><img src="covers/credit-cards.jpg" alt="Cover of Don't Be Trapped by Credit Cards" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-be-trapped-by-credit-cards/">Don't Be Trapped by Credit Cards</a></h3><p>The Economics of Consumer Debt and Behavioral Traps</p></li>
+        <li class="book"><a class="jacket" href="books/dont-save-money/"><img src="covers/save-money.jpg" alt="Cover of Don't Save Money" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-save-money/">Don't Save Money</a></h3><p>The Economics of Inflation, Opportunity Cost, and Idle Capital</p></li>
+        <li class="book"><a class="jacket" href="books/dont-chase-passion/"><img src="covers/chase-passion.jpg" alt="Cover of Don't Chase Passion" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-chase-passion/">Don't Chase Passion</a></h3><p>The Economics of Preference, Income and Regret</p></li>
+        <li class="book"><a class="jacket" href="books/dont-follow-your-degree/"><img src="covers/follow-your-degree.jpg" alt="Cover of Don't Follow Your Degree" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-follow-your-degree/">Don't Follow Your Degree</a></h3><p>The Economics of Skill Mismatch and Labor Demand on Career Development</p></li>
+        <li class="book"><a class="jacket" href="books/dont-go-to-work/"><img src="covers/go-to-work.jpg" alt="Cover of Don't Go to Work" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-go-to-work/">Don't Go to Work</a></h3><p>The Economics of Employment and the Illusion of Security</p></li>
+        <li class="book"><a class="jacket" href="books/dont-trust-job-security/"><img src="covers/trust-job-security.jpg" alt="Cover of Don't Trust Job Security" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-trust-job-security/">Don't Trust Job Security</a></h3><p>The Economics of Risk Transfer and Worker Exposure</p></li>
+        <li class="book"><a class="jacket" href="books/dont-rely-on-a-single-income/"><img src="covers/single-income.jpg" alt="Cover of Don't Rely on a Single Income" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-rely-on-a-single-income/">Don't Rely on a Single Income</a></h3><p>The Economics of Fragility, Optionality, and Financial Resilience</p></li>
+        <li class="book"><a class="jacket" href="books/dont-buy-the-house-yet/"><img src="covers/buy-the-house-yet.jpg" alt="Cover of Don't Buy the House Yet" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-buy-the-house-yet/">Don't Buy the House Yet</a></h3><p>The Economics of Illiquidity, Timing Risk, and Lifestyle Finance</p></li>
+        <li class="book"><a class="jacket" href="books/dont-start-a-business-too-early/"><img src="covers/start-a-business.jpg" alt="Cover of Don't Start a Business Too Early" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-start-a-business-too-early/">Don't Start a Business Too Early</a></h3><p>The Economics of Human Capital and Premature Scaling</p></li>
+        <li class="book"><a class="jacket" href="books/dont-go-to-college/"><img src="covers/go-to-college.jpg" alt="Cover of Don't Go to College" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-go-to-college/">Don't Go to College</a></h3><p>The Economics of Why the Modern Education System Fails, and When It Still Makes Sense</p></li>
+        <li class="book"><a class="jacket" href="books/dont-design-life-around-work/"><img src="covers/design-life-around-work.jpg" alt="Cover of Don't Design Life Around Work" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-design-life-around-work/">Don't Design Life Around Work</a></h3><p>The Economics of Time Misallocation</p></li>
+        <li class="book"><a class="jacket" href="books/dont-live-paycheck-to-paycheck/"><img src="covers/live-paycheck.jpg" alt="Cover of Don't Live Paycheck to Paycheck" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-live-paycheck-to-paycheck/">Don't Live Paycheck to Paycheck</a></h3><p>The Economics of Hidden Financial Fragility</p></li>
+        <li class="book"><a class="jacket" href="books/dont-rely-on-pensions/"><img src="covers/rely-on-pensions.jpg" alt="Cover of Don't Rely on Pensions" width="480" height="720" loading="lazy"></a><h3><a href="books/dont-rely-on-pensions/">Don't Rely on Pensions</a></h3><p>The Economics of Longevity, Policy Risk, and Underfunding</p></li>
+      </ul>
+      <p class="more"><a class="btn primary" href="https://www.amazon.com/stores/Dan-Marcelo/author/B0GLT74WR5" target="_blank" rel="noopener">See all books on Amazon</a></p>
+
+      <div class="sub">
+        <div>
+          <h3>Coming next</h3>
+          <p class="note">The flagship titles of the Economic Intelligence library.</p>
+          <ul class="ledger">
+            <li><strong>Economic Intelligence</strong><span class="r soon">In progress</span></li>
+            <li><strong>The 49 Laws of Economic Intelligence</strong><span class="r soon">In progress</span></li>
+            <li><strong>365 Days of Economic Intelligence</strong><span class="r soon">In progress</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Textbooks</h3>
+          <p class="note">College texts for economics and business students.</p>
+          <ul class="ledger">
+            <li><strong>Microeconomics: Theories and Applications, 2nd ed.</strong><span class="r">Unlimited Books</span></li>
+            <li><strong>Macroeconomics</strong><span class="r">Unlimited Books</span></li>
+            <li><strong>Labor Economics, 2nd ed.</strong><span class="r">Unlimited Books</span></li>
+            <li><strong>Applied Economics</strong><span class="r">Central Books</span></li>
+            <li><strong>Real Estate Economics</strong><span class="r">Central Books, 2025</span></li>
+            <li><strong>Strategic Management</strong><span class="r soon">Central Books · Forthcoming</span></li>
+            <li><strong>History of Economic Thought: Philippine Edition</strong><span class="r soon">Unlimited Books · Forthcoming</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="speaking">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Speaking</div>
+        <h2>Talks that change how audiences decide</h2>
+        <p>Practical sessions grounded in research and in twenty years of banking, real estate, and stock market practice.</p>
+      </div>
+      <div class="topics">
+        <div class="topic"><h3>Economic Intelligence</h3><p>How money and markets really work, and the everyday economic mistakes that keep people financially fragile.</p></div>
+        <div class="topic"><h3>Competitive Intelligence</h3><p>For business leaders and practitioners: reading markets, competitors, and the economy to make better strategic calls.</p></div>
+        <div class="topic"><h3>Financial Literacy for Professionals</h3><p>Budgeting, debt, saving, and investing for working professionals, health workers, and OFW families.</p></div>
+        <div class="topic"><h3>Real Estate &amp; Stock Market Investing</h3><p>A practitioner's view of property and the Philippine Stock Exchange for first-time and growing investors.</p></div>
+      </div>
+      <p class="formats"><strong>Formats:</strong> keynotes, seminars, workshops, and in-house training for companies, professional organizations, schools, and government agencies.</p>
+    </div>
+  </section>
+
+
+
+  <section class="block" id="real-estate">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Real Estate</div>
+        <h2>Property decisions, made with economics</h2>
+        <p>In real estate since 2005, a property investor, and author of the textbook <em>Real Estate Economics</em>. I help buyers, investors, and organizations understand what really drives property value before they commit.</p>
+      </div>
+      <div class="topics">
+        <div class="topic"><h3>Talks and seminars</h3><p>Real estate economics and property investing for professional groups, companies, and schools.</p></div>
+        <div class="topic"><h3>Market insight</h3><p>Location, timing, interest rates, and rental yields, explained in plain language.</p></div>
+      </div>
+      <p class="formats"><a class="btn primary" href="real-estate/">Explore real estate insights</a></p>
+    </div>
+  </section>
+  <section class="block alt" id="campaigns">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Campaign Strategy</div>
+        <h2>Campaign strategist since 2010</h2>
+        <p>Economic reasoning applied to the campaign trail: reading voters, regions, and resources to build strategy that holds up on the ground.</p>
+      </div>
+      <ol class="timeline">
+        <li><span class="yr">2022</span><div><h3>Ping Lacson Presidential Campaign</h3><p>Visayas and Mindanao</p></div></li>
+        <li><span class="yr">2019</span><div><h3>Otso Diretso Senatorial Campaign</h3><p>Laguna</p></div></li>
+        <li><span class="yr">2016</span><div><h3>Leni Robredo Vice-Presidential Campaign</h3><p>Laguna</p></div></li>
+      </ol>
+      <p class="formats"><strong>Now accepting:</strong> campaign strategy and consulting engagements. See <a href="#contact">Contact</a>.</p>
+    </div>
+  </section>
+  <section class="block about" id="about">
+    <div class="wrap">
+      <img class="portrait" src="portrait.jpg" alt="Dan Marcelo signing copies of his book Real Estate Economics" width="480" height="600">
+      <div class="text">
+        <div class="label">About</div>
+        <h2 style="font-size:clamp(34px,4.6vw,52px);margin:12px 0 24px">Danilo F. Marcelo Jr., DBA</h2>
+        <p>Dan Marcelo is an economist, professor, author, and real estate and stock market investor with extensive academic and financial-markets experience.</p>
+        <p>He has taught economics and business for more than a decade and has written books on microeconomics, macroeconomics, labor economics, real estate economics, and applied economics. His work turns complex economic ideas into clear, practical insights that help readers decide better in business, finance, and everyday life.</p>
+        <p>Before academia, he built a banking career of more than a decade at one of the largest banks in the Philippines. He has practiced real estate since 2005 and has been active in the stock market since 2010. That dual perspective, scholarly and practical, shapes how he writes about finance and investing.</p>
+        <p>Since 2010 he has also worked as a political campaign strategist, including national campaigns in Laguna, the Visayas, and Mindanao.</p>
+        <p>He is the creator of the Don't Series, books on the economic mistakes people commonly make in finance, investing, and decision-making.</p>
+        <blockquote>Making economics accessible, intellectually honest, and useful for readers around the world.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Contact</div>
+        <h2>Speaking, campaign, media, and book inquiries</h2>
+        <p>Send a short note and I will get back to you.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="cform" name="contact" method="POST" action="https://api.web3forms.com/submit" id="contactForm">
+          <input type="hidden" name="access_key" value="1f6c99d5-e96e-4848-b0b3-45d562f67a51">
+          <input type="hidden" name="subject" value="New message from danmarcelo.com">
+          <input type="hidden" name="from_name" value="danmarcelo.com contact form">
+          <input type="hidden" name="redirect" value="https://danmarcelo.com/thanks.html">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="row2">
+            <label for="cf-name">Your name<input id="cf-name" name="name" type="text" autocomplete="name" required></label>
+            <label for="cf-email">Email<input id="cf-email" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="row2">
+            <label for="cf-org"><span>Organization <span class="opt">(optional)</span></span><input id="cf-org" name="organization" type="text" autocomplete="organization"></label>
+            <label for="cf-type">Inquiry about<select id="cf-type" name="inquiry">
+              <option>Speaking engagement</option><option>Campaign strategy</option><option>Media or interview</option><option>Books</option><option>Other</option>
+            </select></label>
+          </div>
+          <label for="cf-msg">Message<textarea id="cf-msg" name="message" rows="5" required placeholder="Event, audience, location, and preferred date"></textarea></label>
+          <button class="send" type="submit">Send message</button>
+          <p class="fstatus" id="fstatus" role="status"></p>
+        </form>
+        <aside class="follow">
+          <h3>Follow</h3>
+          <a class="social" href="https://www.facebook.com/docdanmarcelo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M13.4 19.5v-6.2h2.1l.3-2.5h-2.4V9.3c0-.7.2-1.2 1.2-1.2h1.3V5.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3v1.8H8.7v2.5h2.1v6.2z" fill="var(--cover)"/></svg><span>Facebook<small>@docdanmarcelo</small></span></a>
+          <a class="social" href="https://www.amazon.com/stores/Dan-Marcelo/author/B0GLT74WR5" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M6.5 14.6c3.2 2 7.6 2.2 11 .3M15.6 14.1l2 .8-.5 2" stroke="var(--cover)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Amazon Author Page<small>All Don&#39;t Series books</small></span></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Dan Marcelo</span>
+    <span><a href="https://www.facebook.com/docdanmarcelo" target="_blank" rel="noopener">Facebook</a> · danmarcelo.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('contactForm'), st=document.getElementById('fstatus');
+  var live=/(^|\.)danmarcelo\.com$|\.netlify\.app$/.test(location.hostname);
+  f.addEventListener('submit',function(e){
+    if(!live){e.preventDefault();st.textContent='Preview only. On danmarcelo.com this form sends the message to Dan.';}
+  });
+})();
+</script>
+<script>
+/* Phones and tablets: open outside links in the same tab. Some mobile browsers (and the Facebook/Messenger in-app browser) ignore taps on links that try to open a new tab. */
+(function(){
+  try{
+    if(window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse)').matches){
+      var a=document.querySelectorAll('a[target="_blank"]');
+      for(var i=0;i<a.length;i++){a[i].removeAttribute('target');}
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
